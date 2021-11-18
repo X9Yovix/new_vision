@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="text-center text-md-left">
-              <p class="mb-0"> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span>. <a href="#"> New Vision </a> All Rights Reserved. </p>
+              <p class="mb-0"> <a href="#"> New Vision </a> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span>. All Rights Reserved. </p>
           </div>
         </div>
         <div class="col-md-6">

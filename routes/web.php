@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,16 +14,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=>'guest'],function(){
+	Route::get('/',function(){
+		return view('auth.login');
+	});
+});
+
 
 Route::group(
 	[
 		'prefix' => LaravelLocalization::setLocale(),
-		'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+		'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
 	],
 	function () {
-		Route::get('/', function () {
+		/*Route::get('/', function () {
 			return view('dashboard');
 		});
+		*/
+		Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 	}
 );
 /*
@@ -33,5 +43,3 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 */
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

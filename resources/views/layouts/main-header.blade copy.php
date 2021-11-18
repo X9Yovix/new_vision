@@ -11,31 +11,14 @@
                 </li>
             </ul>
             <!-- top bar right -->
-
             <ul>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       {{ Config::get('languages')[App::getLocale()] }} 
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li>
+                    <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        {{ $properties['native'] }}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            <img src="{{ $properties['flag'] }}" alt="flag">
-                            {{ $properties['native'] }}
-                        </a>
-                        @endforeach
-                    </div>
                 </li>
-                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li>
-                        <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            {{ $properties['native'] }}
-                        </a>
-                        <img src="{{ $properties['flag'] }}" alt="flag">
-                    </li>
-                    @endforeach
-                </div> -->
+                @endforeach
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-30">
@@ -46,15 +29,23 @@
                         <div class="dropdown-header">
                             <div class="media">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-0">Test Test</h5>
+                                    <h5 class="mt-0 mb-0">Michael Bean</h5>
+                                    <!-- <span>michael-bean@mail.com</span> -->
                                 </div>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
+                        <!-- <a class="dropdown-item" href="#"><i class="text-secondary ti-reload"></i>Activity</a> -->
+                        <a class="dropdown-item" href="#"><i class="text-success ti-email"></i>Messages</a>
+                        <a class="dropdown-item" href="#"><i class="text-warning ti-user"></i>Profile</a>
+                        <!-- <a class="dropdown-item" href="#"><i class="text-dark ti-layers-alt"></i>Projects <span
+                                class="badge badge-info">6</span> </a>
+                        <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
                         <a class="dropdown-item" href="#"><i class="text-danger ti-unlock"></i>Logout</a>
                     </div>
                 </li>
             </ul>
         </nav>
+
         <!--header End-->
