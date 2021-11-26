@@ -3,11 +3,10 @@
 <!-- plugins-jquery -->
 <script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
 <!-- plugin_path -->
-<script>
-    var plugin_path = 'js/';
-
-</script>
-
+<script type="text/javascript"> var plugin_path = '{{ asset('assets/js')}}/' ;></script>
+<script type="text/javascript">$(document).ready(function(){ $('#datatable').DataTable(); });</script>
+<script src="{{ URL::asset('assets/js/bootstrap-datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/bootstrap-datatables/dataTables.bootstrap4.min.js') }}"></script>
 <!-- chart -->
 <script src="{{ URL::asset('assets/js/chart-init.js') }}"></script>
 <!-- calendar -->

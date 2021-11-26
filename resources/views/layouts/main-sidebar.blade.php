@@ -16,10 +16,12 @@
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
                             <div class="pull-left"><i class="ti-palette"></i><span
-                                    class="right-nav-text">Elements</span></div>
+                                    class="right-nav-text">{{trans('dashboard.Grade')}}</span></div>
                             <div class="clearfix"></div>
                         </a>
-                        
+                        <ul id="elements" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{ route('Grade.index') }}">{{trans('dashboard.Grade_list')}}</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
