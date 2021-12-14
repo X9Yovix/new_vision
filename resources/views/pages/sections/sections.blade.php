@@ -5,13 +5,13 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 @section('title')
-    {{ trans('section.title_page') }}
+    {{ trans('section.Title_page') }}
 @stop
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 @section('PageTitle')
-    {{ trans('section.title_page') }}
+    {{ trans('section.Title_page') }}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
         <div class="card card-statistics h-100">
             <div class="card-body">
                 <a class="button x-small" href="#" data-toggle="modal" data-target="#exampleModal">
-                    {{ trans('section.add_section') }}</a>
+                    {{ trans('section.Add_section') }}</a>
             </div>
 
             @if ($errors->any())
@@ -41,13 +41,10 @@
             <div class="card card-statistics h-100">
                 <div class="card-body">
                     <div class="accordion gray plus-icon round">
-
                         @foreach ($Grades as $Grade)
-
                             <div class="acd-group">
                                 <a href="#" class="acd-heading">{{ $Grade->Name }}</a>
                                 <div class="acd-des">
-
                                     <div class="row">
                                         <div class="col-xl-12 mb-30">
                                             <div class="card card-statistics h-100">
@@ -85,10 +82,8 @@
                                                                                 <label
                                                                                     class="badge badge-danger">{{ trans('section.Status_Section_No') }}</label>
                                                                             @endif
-
                                                                         </td>
                                                                         <td>
-
                                                                             <a href="#"
                                                                                 class="btn btn-outline-info btn-sm"
                                                                                 data-toggle="modal"
@@ -100,7 +95,7 @@
                                                                         </td>
                                                                     </tr>
 
-                                                                    {{-- edit modal --}}
+                                                                    <!-- Edit modal -->
                                                                     <div class="modal fade"
                                                                         id="edit{{ $list_Sections->id }}"
                                                                         tabindex="-1" role="dialog"
@@ -112,7 +107,7 @@
                                                                                     <h5 class="modal-title"
                                                                                         style="font-family: 'Cairo', sans-serif;"
                                                                                         id="exampleModalLabel">
-                                                                                        {{ trans('section.edit_Section') }}
+                                                                                        {{ trans('section.Edit_Section') }}
                                                                                     </h5>
                                                                                     <button type="button"
                                                                                         class="close"
@@ -123,7 +118,6 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-
                                                                                     <form
                                                                                         action="{{ route('Sections.update', 'test') }}"
                                                                                         method="POST">
@@ -141,18 +135,14 @@
                                                                                                     class="form-control"
                                                                                                     value="{{ $list_Sections->id }}">
                                                                                             </div>
-
                                                                                         </div>
                                                                                         <br>
-
-
                                                                                         <div class="col">
                                                                                             <label for="inputName"
                                                                                                 class="control-label">{{ trans('section.Name_Grade') }}</label>
                                                                                             <select name="Grade_id"
                                                                                                 class="custom-select"
                                                                                                 onclick="console.log($(this).val())">
-                                                                                                <!--placeholder-->
                                                                                                 <option
                                                                                                     value="{{ $Grade->id }}">
                                                                                                     {{ $Grade->Name }}
@@ -166,7 +156,6 @@
                                                                                             </select>
                                                                                         </div>
                                                                                         <br>
-
                                                                                         <div class="col">
                                                                                             <label for="inputName"
                                                                                                 class="control-label">{{ trans('section.Name_Class') }}</label>
@@ -179,10 +168,8 @@
                                                                                             </select>
                                                                                         </div>
                                                                                         <br>
-
                                                                                         <div class="col">
                                                                                             <div class="form-check">
-
                                                                                                 @if ($list_Sections->Status === 1)
                                                                                                     <input
                                                                                                         type="checkbox"
@@ -205,7 +192,7 @@
                                                                                                     class="col">
                                                                                                     <label
                                                                                                         for="inputName"
-                                                                                                        class="control-label">{{ trans('Sections_trans.Name_Teacher') }}</label>
+                                                                                                        class="control-label">{{ trans('section.Name_Teacher') }}</label>
                                                                                                     <select multiple
                                                                                                         name="teacher_id[]"
                                                                                                         class="form-control"
@@ -217,30 +204,24 @@
                                                                                                                 {{ $teacher['Name'] }}
                                                                                                             </option>
                                                                                                         @endforeach
-                                                                                                        
-
                                                                                                         @foreach ($teachers as $teacher)
                                                                                                             <option
                                                                                                                 value="{{ $teacher->id }}">
                                                                                                                 {{ $teacher->Name }}
                                                                                                             </option>
                                                                                                         @endforeach
-                                                                                                        
-
                                                                                                     </select>
                                                                                                 </div>
 
                                                                                             </div>
                                                                                         </div>
-
-
                                                                                 </div>
                                                                                 <div class="modal-footer">
                                                                                     <button type="button"
                                                                                         class="btn btn-secondary"
                                                                                         data-dismiss="modal">{{ trans('section.Close') }}</button>
                                                                                     <button type="submit"
-                                                                                        class="btn btn-danger">{{ trans('section.submit') }}</button>
+                                                                                        class="btn btn-danger">{{ trans('section.Submit') }}</button>
                                                                                 </div>
                                                                                 </form>
                                                                             </div>
@@ -248,7 +229,7 @@
                                                                     </div>
 
 
-                                                                    <!-- delete_modal_Grade -->
+                                                                    <!-- Delete modal -->
                                                                     <div class="modal fade"
                                                                         id="delete{{ $list_Sections->id }}"
                                                                         tabindex="-1" role="dialog"
@@ -260,7 +241,7 @@
                                                                                     <h5 style="font-family: 'Cairo', sans-serif;"
                                                                                         class="modal-title"
                                                                                         id="exampleModalLabel">
-                                                                                        {{ trans('section.delete_Section') }}
+                                                                                        {{ trans('section.Delete_Section') }}
                                                                                     </h5>
                                                                                     <button type="button"
                                                                                         class="close"
@@ -286,7 +267,7 @@
                                                                                                 class="btn btn-secondary"
                                                                                                 data-dismiss="modal">{{ trans('section.Close') }}</button>
                                                                                             <button type="submit"
-                                                                                                class="btn btn-danger">{{ trans('section.submit') }}</button>
+                                                                                                class="btn btn-danger">{{ trans('section.Submit') }}</button>
                                                                                         </div>
                                                                                     </form>
                                                                                 </div>
@@ -306,22 +287,19 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- add modal -->
+            <!-- Add modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" style="font-family: 'Cairo', sans-serif;" id="exampleModalLabel">
-                                {{ trans('section.add_section') }}</h5>
+                                {{ trans('section.Add_section') }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <form action="{{ route('Sections.store') }}" method="POST">
                                 {{ csrf_field() }}
                                 <div class="row">
@@ -331,13 +309,11 @@
                                     </div>
                                 </div>
                                 <br>
-
                                 <div class="col">
                                     <label for="inputName"
                                         class="control-label">{{ trans('section.Name_Grade') }}</label>
                                     <select name="Grade_id" class="custom-select"
                                         onchange="console.log($(this).val())">
-                                        <!--placeholder-->
                                         <option value="" selected disabled>{{ trans('section.Select_Grade') }}
                                         </option>
                                         @foreach ($list_Grades as $list_Grade)
@@ -347,7 +323,6 @@
                                     </select>
                                 </div>
                                 <br>
-
                                 <div class="col">
                                     <label for="inputName"
                                         class="control-label">{{ trans('section.Name_Class') }}</label>
@@ -355,10 +330,10 @@
 
                                     </select>
                                 </div>
-
+                                <br>
                                 <div class="col">
                                     <label for="inputName"
-                                        class="control-label">{{ trans('Sections_trans.Name_Teacher') }}</label>
+                                        class="control-label">{{ trans('section.Name_Teacher') }}</label>
                                     <select multiple name="teacher_id[]" class="form-control"
                                         id="exampleFormControlSelect2">
                                         @foreach ($teachers as $teacher)
@@ -370,7 +345,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">{{ trans('section.Close') }}</button>
-                            <button type="submit" class="btn btn-danger">{{ trans('section.submit') }}</button>
+                            <button type="submit" class="btn btn-danger">{{ trans('section.Submit') }}</button>
                         </div>
                         </form>
                     </div>
@@ -380,7 +355,6 @@
         </div>
     </div>
 </div>
-<!-- row closed -->
 @endsection
 @section('js')
 @toastr_js

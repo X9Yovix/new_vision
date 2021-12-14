@@ -6,7 +6,7 @@ return [
     'Add_section' => 'Add Section ',
     'Edit_Section'=> 'Edit Section',
     'Delete_Section'=> 'Delete Section',
-    'Warning_Section'=> 'Are Sure Of The Deleting Process ?',
+    'Warning_Section'=> 'Are you sure of the deleting',
     'Section_name' => 'Section name',
     'Select_Grade' => '-- Select Grade --',
     'Name_Grade' => 'Name Grade',
@@ -24,4 +24,5 @@ return [
     'Delete'=>'Delete',
     'Close' => 'Close',
     'Exists' => 'This field already exists',
+    'Name_Teacher' => 'Name Teacher',
 ];

@@ -65,7 +65,7 @@
                             <br>
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <label for="inputCity">{{ trans('teacher.specialization') }}</label>
+                                    <label for="inputCity">{{ trans('teacher.Specialization') }}</label>
                                     <select class="custom-select my-1 mr-sm-2" name="Specialization_id">
                                         <option selected disabled>{{ trans('teacher.Choose') }}...</option>
                                         @foreach ($specializations as $specialization)
@@ -112,8 +112,8 @@
                                 @enderror
                             </div>
 
-                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
-                                type="submit">{{ trans('Parent_trans.Next') }}</button>
+                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-left"
+                                type="submit">{{ trans('teacher.Add') }}</button>
                         </form>
                     </div>
                 </div>

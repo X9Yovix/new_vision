@@ -50,7 +50,7 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">Total Accounts</p>
+                                    <p class="card-text text-dark">Total Accounts Created</p>
                                     <h4>{{$res}}</h4>
                                 </div>
                             </div>

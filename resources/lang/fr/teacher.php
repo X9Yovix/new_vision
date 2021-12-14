@@ -8,9 +8,10 @@ return [
     'Email'=>'Email',
     'Password'=>'Mot de passe',
     'Name'=>'Nom',
-    'specialization'=>'Spécialité',
+    'Specialization'=>'Spécialité',
     'Gender'=>'Genre',
     'Joining_Date'=>'Date de participation',
     'Address'=>'Addresse',
     'Choose' => 'Choisir',
+    'Add' => 'Ajouter',
 ];

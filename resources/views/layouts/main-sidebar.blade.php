@@ -1,10 +1,8 @@
 <div class="container-fluid">
     <div class="row">
-        <!-- Left Sidebar start-->
         <div class="side-menu-fixed">
             <div class="scrollbar side-menu-bg">
                 <ul class="nav navbar-nav side-menu" id="sidebarnav">
-                    <!-- menu item Dashboard-->
                     <li>
                         <a href="{{ route('dashboard') }}">
                             <div class="pull-left"><i class="ti-home"></i><span
@@ -18,7 +16,7 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
                             <div class="pull-left">
                                 <i class="ti-palette"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.Grade') }}</span>
+                                <span class="right-nav-text">{{ trans('dashboard.Grades') }}</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -32,7 +30,7 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#classes-menu">
                             <div class="pull-left">
                                 <i class="fa fa-building"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.classes') }}</span>
+                                <span class="right-nav-text">{{ trans('dashboard.Classes') }}</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -47,7 +45,7 @@
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#section-menu">
                             <div class="pull-left">
                                 <i class="ti-blackboard"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.sections') }}</span>
+                                <span class="right-nav-text">{{ trans('dashboard.Sections') }}</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -69,56 +67,10 @@
                         </a>
                         <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a
-                                    href="{{ route('Teachers.index') }}">{{ trans('dashboard.list_teachers') }}</a>
+                                    href="{{ route('Teachers.index') }}">{{ trans('dashboard.List_teachers') }}</a>
                             </li>
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu">
-                            <div class="pull-left">
-                                <i class="ti-user"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.students') }}</span>
-                            </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('Students.index') }}">{{ trans('dashboard.list_teachers') }}</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-
-                    {{-- <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">
-                            <div class="pull-left">
-                                <i class="ti-calendar"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.Attendance') }}</span>
-                            </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="Attendance-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="test.html">test </a> </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-icon">
-                            <div class="pull-left">
-                                <i class="ti-video-camera"></i>
-                                <span class="right-nav-text">{{ trans('dashboard.Onlineclasses') }}</span>
-                            </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="Onlineclasses-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="test.html">test </a> </li>
-                        </ul>
-                    </li> --}}
-
                 </ul>
             </div>
         </div>

@@ -1,18 +1,15 @@
-<!--header start-->
 <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <!-- logo -->
     <div class="text-left navbar-brand-wrapper">
         <a class="navbar-brand brand-logo" href="{{ route('dashboard') }}">
             <img src="{{ asset('assets/images/logo_new_vision.png') }}" alt=""></a>
     </div>
-    <!-- Top bar left -->
+
     <ul class="nav navbar-nav mr-auto">
         <li class="nav-item">
             <a id="button-toggle" class="button-toggle-nav inline-block ml--1 pull-left" href="javascript:void(0);"><i
                     class="zmdi zmdi-menu ti-align-right"></i></a>
         </li>
     </ul>
-    <!-- top bar right -->
 
     <div class="btn-group mb-1">
         <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -34,6 +31,7 @@
             @endforeach
         </div>
     </div>
+    
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item dropdown mr-30">
             <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
@@ -63,14 +61,6 @@
                 <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();">
                     <i class="text-danger ti-direction"></i>Logout</a>
                 </form>
-                {{-- @if (auth('student')->check())
-                            
-                        @elseif ()
-                        
-                        @else
-
-                        @endif
-                        <a class="dropdown-item" href="{{ url('/logout') }}" ><i class="text-danger ti-unlock"></i>Logout</a> --}}
             </div>
         </li>
     </ul>

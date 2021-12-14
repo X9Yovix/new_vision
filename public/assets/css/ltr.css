@@ -20195,7 +20195,7 @@ ul.list-unstyled li {
   padding: 30px;
   overflow: hidden;
   margin-left: 215px;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   -webkit-transition: all 0.9s ease;
   -moz-transition: all 0.9s ease;
   -ms-transition: all 0.9s ease;

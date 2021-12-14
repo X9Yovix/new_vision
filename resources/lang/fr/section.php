@@ -6,7 +6,7 @@ return [
     'Add_section' => 'Ajouter une section',
     'Edit_Section'=> 'Modifier la section',
     'Delete_Section'=> 'Supprimer la section',
-    'Warning_Section'=> 'Vous êtes sûr de supprimer?',
+    'Warning_Section'=> 'Vous êtes sûr de supprimer',
     'Section_name' => 'Nom de la section',
     'Select_Grade' => '-- Choisir le grade --',
     'Name_Grade' => 'Nom Grade',
@@ -24,4 +24,5 @@ return [
     'Delete'=>'Supprimer',
     'Close' => 'Fermer',
     'Exists' => 'Ce champ existe déjà',
+    'Name_Teacher' => 'Nom Enseignant',
 ];

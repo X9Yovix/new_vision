@@ -24,18 +24,7 @@ class LoginController extends Controller
 
     //use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    //protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -81,7 +70,6 @@ class LoginController extends Controller
             return redirect()->intended(RouteServiceProvider::STUDENT);
         }elseif($req->type == "teacher"){
             return redirect()->intended(RouteServiceProvider::TEACHER);
-
         }else{
             return redirect()->intended(RouteServiceProvider::HOME);
         }

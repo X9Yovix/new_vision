@@ -8,7 +8,6 @@
                         <img src="{{ asset('assets/images/x.jpg') }}" alt="" />
                     </div>
                     <h1 class="header_item">{{ trans('home_page.Admin') }}</h1>
-                    {{-- <h4 class="title_item">Title</h4> --}}
                     <a href="{{ route('login.show', 'admin') }}"><button
                             class="btn-to-login"><span>{{ trans('home_page.Login') }}</span></button></a>
                 </div>
@@ -21,10 +20,9 @@
                         <img src="{{ asset('assets/images/x.jpg') }}" alt="" />
                     </div>
                     <h1 class="header_item">{{ trans('home_page.Teacher') }}</h1>
-                    {{-- <h4 class="title_item">Title</h4> --}}
-                    <a href="{{ route('login.show', 'teacher') }}"><button
-                            class="btn-to-login"><span>{{ trans('home_page.Login') }}
-                            </span></button></a>
+                    <a href="{{ route('login.show', 'teacher') }}">
+                        <button class="btn-to-login"><span>{{ trans('home_page.Login') }}</span></button>
+                    </a>
                 </div>
             </div>
         </div>

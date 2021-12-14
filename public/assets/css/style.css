@@ -1,63 +1,11 @@
 /* main */
 .section-home {
-    background-color: #F1FAEE;
+    background-color: #fafafa;
 }
 
 .bg-navbar {
     background-color: #A8DADC !important;
 }
-
-/* navbar */
-/* .navbar-nav .nav-item a {
-    font-size: 15px;
-    font-family: Poppins;
-    transition: 0.5s;
-    border-radius: 5px;
-}
-
-.navbar-nav .nav-item a:hover {
-    color: white !important;
-    background-color: #4227a5;
-}
-
-.custom-navbar-home-page .dropdown-item {
-    display: flex;
-}
-
-.flag-custom-navbar {
-    padding-right: 10px;
-} */
-
-/* .navbar-nav li a:before,
-.navbar-nav li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    bottom: -1px;
-    background: rgb(13, 26, 38);
-}
-
-.navbar-nav li a:before {
-    left: 0;
-    transition: 0.5s;
-}
-.navbar-nav li a:after {
-    background: rgb(13, 26, 38);
-    right: 0;
-    //transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.navbar-nav li a:hover:before {
-    background: rgb(13, 26, 38);
-    width: 100%;
-    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-}
-
-.navbar-nav li a:hover:after {
-    background: transparent;
-    width: 100%;
-} */
 
 /* home page */
 .split-screen-wrap {
@@ -177,20 +125,23 @@
 }
 
 .child-1 {
-    background-image: url('../images/admin.png');
+    background-image: url('../images/tmp1_admin.jpg');
+    background-size: cover;
     background-position-x: 30%;
     color: #fff;
 }
 
 .child-2 {
-    background-image: url('../images/home-login.jpg');
+    background-image: url('../images/tmp1_teacher.jpg');
+    background-size: cover;
     background-position-x: 30%;
     color: #fff;
 }
 
 .child-3 {
-    background-image: url('../images/admin.png');
+    background-image: url('../images/tmp1_student.jpg');
     background-position-x: 30%;
+    background-size: cover;
     color: #fff;
 }
 
