@@ -19045,7 +19045,8 @@ button {
     outline: 0; }
 
 .button {
-  background: #84ba3f;
+  /* background: #84ba3f; */
+  background: var(--teal);
   padding: 10px 20px;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -19056,7 +19057,8 @@ button {
   display: inline-block;
   border-radius: 3px;
   text-align: center;
-  border: 2px solid #84ba3f;
+  /* border: 2px solid #84ba3f; */
+  border: 2px solid var(--green);
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -22343,7 +22345,8 @@ textarea.form-control {
   color: #626262; }
 
 .pagination .page-item.active .page-link {
-  background: #84ba3f;
+  /* background: #84ba3f; */
+  background: #08c;
   border-color: #84ba3f;
   color: #ffffff; }
 

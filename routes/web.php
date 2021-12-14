@@ -15,25 +15,43 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::get('/selection', 'HomeController@selection')->name('selection');
 
-Route::group(['namespace' => 'Auth'], function () {
-	Route::get('/login/{type}', 'LoginController@loginForm')->middleware('guest')->name('login.show');
-	Route::post('/login', 'HomeController@selection')->name('login');
-	Route::get('/register', 'HomeController@register')->name('register');
-});
 
-Route::group(['middleware' => 'guest'], function () {
-	/* Route::get('/', function () {
+Route::group(
+	[
+		'namespace' => 'Auth', 'prefix' => LaravelLocalization::setLocale(),
+		'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+	],
+	function () {
+		Route::get('/login/{type}', 'LoginController@loginForm')->middleware('guest')->name('login.show');
+		Route::post('/login', 'LoginController@login')->name('login');
+		Route::post('/register', 'RegisterController@create')->name('register');
+		Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+	}
+);
+
+Route::group(
+	/* ['middleware' =>  'guest'], */
+	[
+		'prefix' => LaravelLocalization::setLocale(),
+		'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'guest']
+	],
+	function () {
+		/* Route::get('/', function () {
 		return view('auth.login');
 	}); */
-	Route::get('/', function () {
-		return view('auth.selection');
-	})->name('home_page');;
-	Route::get('/home', function () {
-		return view('auth.selection');
-	});
-});
+		Route::get('/selection', 'HomeController@index')->name('selection');
+		Route::get('/', function () {
+			return view('auth.selection');
+		})->name('home_page');
+		Route::get('/home', function () {
+			return view('auth.selection');
+		});
+		Route::get('/register', function () {
+			return view('auth.register');
+		});
+	}
+);
 
 
 Route::group(
@@ -46,15 +64,40 @@ Route::group(
 			return view('dashboard');
 		});
 		*/
-		Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+		/*
+		Route::group(['namespace' => "Auth"], function () {
+			Route::get('/logout', 'LoginController@logout');
+		});
+		*/
+		Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 		//Route::resource('Grades', 'GradeController');
 
 		Route::group(['namespace' => "Grade"], function () {
 			Route::resource('Grade', 'GradeController');
 		});
 
-		Route::group(['namespace' => "Auth"], function () {
-			Route::get('/logout', 'LoginController@logout');
+		Route::group(['namespace' => 'Classrooms'], function () {
+			Route::resource('Classrooms', 'ClassroomsController');
+			Route::post('delete_all', 'ClassroomsController@delete_all')->name('delete_all');
+
+			Route::post('Filter_Classes', 'ClassroomsController@Filter_Classes')->name('Filter_Classes');
+		});
+
+		Route::group(['namespace' => 'Sections'], function () {
+
+			Route::resource('Sections', 'SectionsController');
+
+			Route::get('/classes/{id}', 'SectionsController@getclasses');
+		});
+
+		Route::group(['namespace' => 'Teachers'], function () {
+			Route::resource('Teachers', 'TeachersController');
+		});
+
+		Route::group(['namespace' => 'Students'], function () {
+			Route::resource('Students', 'StudentsController');
+			Route::get('/Get_classrooms/{id}', 'StudentsController@Get_classrooms');
+			Route::get('/Get_Sections/{id}', 'StudentsController@Get_Sections');
 		});
 	}
 );
@@ -65,5 +108,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 	});
 });
 */
-
+//Auth::routes();
 //Auth::routes();

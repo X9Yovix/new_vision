@@ -1,35 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="flex flex-col md:flex-row h-screen items-center">
+    <section class="flex flex-col md:flex-row h-full items-center">
 
-        <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-            <img src="https://source.unsplash.com/random" alt="" class="w-full h-full object-cover">
+        <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-full">
+            <img src="{{ asset('assets/images/login.jpg') }}" alt="" class="w-full h-full object-cover">
         </div>
 
         <div
-            class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+            class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-full px-6 lg:px-16 xl:px-12
           flex items-center justify-center">
 
             <div class="w-full h-100">
 
+                @if ($type == 'student')
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Student, Log in to your account</h1>
+                @elseif($type == 'teacher')
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Teacher, Log in to your account</h1>
+                @else
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Admin, Log in to your account</h1>
+                @endif
 
-                <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Log in to your account</h1>
 
-                <form class="mt-6" action="#" method="POST">
+                <form class="mt-6" action="{{ route('login') }}" method="POST">
+                    @csrf
                     <div>
                         <label class="block text-gray-700">Email Address</label>
-                        <input type="email" name="" id="" placeholder="Enter Email Address"
-                            class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
-                            autofocus autocomplete required>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                     </div>
 
                     <div class="mt-4">
                         <label class="block text-gray-700">Password</label>
-                        <input type="password" name="" id="" placeholder="Enter Password" minlength="6"
-                            class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
-                  focus:bg-white focus:outline-none"
-                            required>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                            name="password" required autocomplete="current-password" minlength="6" />
+                        <input value="{{ $type }}" type="hidden" name="type" />
                     </div>
 
                     <div class="text-right mt-2">
@@ -44,9 +49,9 @@
                         In</button>
                 </form>
 
-                <hr class="my-6 border-gray-300 w-full">
+                <hr class="my-5 border-gray-300 w-full">
 
-                <button type="button"
+                {{-- <button type="button"
                     class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300">
                     <div class="flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -68,10 +73,10 @@
                             with
                             Google</span>
                     </div>
-                </button>
+                </button> --}}
 
-                <p class="mt-8">Need an account? <a href="#"
-                        class="text-blue-500 hover:text-blue-700 font-semibold">Create an
+                <p class="mt-8">Need an account? <a href="{{ route('register') }}"
+                        class="text-blue-500 hover:text-blue-700 font-semibold hover:no-underline">Create an
                         account</a></p>
 
 
