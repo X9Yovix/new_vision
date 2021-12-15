@@ -93,12 +93,6 @@ Route::group(
 		Route::group(['namespace' => 'Teachers'], function () {
 			Route::resource('Teachers', 'TeachersController');
 		});
-
-		Route::group(['namespace' => 'Students'], function () {
-			Route::resource('Students', 'StudentsController');
-			Route::get('/Get_classrooms/{id}', 'StudentsController@Get_classrooms');
-			Route::get('/Get_Sections/{id}', 'StudentsController@Get_Sections');
-		});
 	}
 );
 /*
