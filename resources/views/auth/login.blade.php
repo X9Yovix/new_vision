@@ -14,24 +14,24 @@
             <div class="w-full h-100">
 
                 @if ($type == 'student')
-                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Student, Log in to your account</h1>
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">{{ trans('login.Hi') }} Student, {{ trans('login.Title') }}</h1>
                 @elseif($type == 'teacher')
-                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Teacher, Log in to your account</h1>
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">{{ trans('login.Hi') }} Teacher, {{ trans('login.Title') }}</h1>
                 @else
-                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Hi Admin, Log in to your account</h1>
+                    <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">{{ trans('login.Hi') }} Admin, {{ trans('login.Title') }}</h1>
                 @endif
 
 
                 <form class="mt-6" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div>
-                        <label class="block text-gray-700">Email Address</label>
+                        <label class="block text-gray-700">{{ trans('login.Email') }}</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                     </div>
 
                     <div class="mt-4">
-                        <label class="block text-gray-700">Password</label>
+                        <label class="block text-gray-700">{{ trans('login.Password') }}</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password" required autocomplete="current-password" minlength="6" />
                         <input value="{{ $type }}" type="hidden" name="type" />
@@ -39,14 +39,12 @@
 
                     <div class="text-right mt-2">
                         <a href="#"
-                            class="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot
-                            Password?</a>
+                            class="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">{{ trans('login.Forgot') }}</a>
                     </div>
 
                     <button type="submit"
                         class="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg
-                px-4 py-3 mt-6">Log
-                        In</button>
+                px-4 py-3 mt-6">{{ trans('login.Log') }}</button>
                 </form>
 
                 <hr class="my-5 border-gray-300 w-full">
@@ -75,9 +73,8 @@
                     </div>
                 </button> --}}
 
-                <p class="mt-8">Need an account? <a href="{{ route('register') }}"
-                        class="text-blue-500 hover:text-blue-700 font-semibold hover:no-underline">Create an
-                        account</a></p>
+                <p class="mt-8">{{ trans('login.Need') }} <a href="{{ route('register') }}"
+                        class="text-blue-500 hover:text-blue-700 font-semibold hover:no-underline">{{ trans('login.Create') }}</a></p>
 
 
             </div>

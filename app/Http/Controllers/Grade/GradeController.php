@@ -42,7 +42,7 @@ class GradeController extends Controller
     public function store(StoreGrades $request)
     {
         if (Grade::where('Name->fr', $request->Name_fr)->orWhere('Name->en', $request->Name_en)->exists()) {
-            return redirect()->back()->withErrors(trans('grade_page.exists'));
+            return redirect()->back()->withErrors(trans('grade_page.Exists'));
         }
         try {
             $validated = $request->validated();
@@ -112,7 +112,7 @@ class GradeController extends Controller
             return redirect()->route('Grade.index');
         } else {
 
-            toastr()->error(trans('grade_page.delete_Grade_Error'));
+            toastr()->error(trans('grade_page.Delete_Grade_Error'));
             return redirect()->route('Grade.index');
         }
         /* try {

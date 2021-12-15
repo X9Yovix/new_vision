@@ -121,7 +121,6 @@
         </div>
     </div>
 </div>
-<!-- row closed -->
 @endsection
 @section('js')
 @toastr_js

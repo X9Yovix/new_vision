@@ -31,9 +31,10 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $student = DB::table('Students')->count();
+        //$student = DB::table('Students')->count();
         $teacher = DB::table('Teachers')->count();
-        $res = $student + $teacher;
+        //$res = $student + $teacher;
+        $res = $teacher;
         return view('dashboard', compact('res'));
     }
 

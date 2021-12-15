@@ -92,7 +92,6 @@
                                 </div>
                             </div>
                             <br>
-
                             <div class="form-row">
                                 <div class="col">
                                     <label for="title">{{ trans('teacher.Joining_Date') }}</label>
@@ -107,18 +106,14 @@
                                 </div>
                             </div>
                             <br>
-
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">{{ trans('teacher.Address') }}</label>
-                                <textarea class="form-control" name="Address" id="exampleFormControlTextarea1"
-                                    rows="4">{{ $Teachers->Address }}</textarea>
+                                <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" rows="4">{{ $Teachers->Address }}</textarea>
                                 @error('Address')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-
-                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
-                                type="submit">{{ trans('Parent_trans.Next') }}</button>
+                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-left" type="submit">{{ trans('teacher.Add') }}</button>
                         </form>
                     </div>
                 </div>
@@ -126,7 +121,6 @@
         </div>
     </div>
 </div>
-<!-- row closed -->
 @endsection
 @section('js')
 @toastr_js
