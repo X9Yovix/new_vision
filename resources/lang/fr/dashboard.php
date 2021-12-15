@@ -23,4 +23,6 @@ return [
 
     'Attendance' => 'Présence',
     'Onlineclasses' => 'Classe en ligne',
+
+    'Total' => 'Nombre total de comptes créés',
 ];

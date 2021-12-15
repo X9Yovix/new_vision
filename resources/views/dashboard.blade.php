@@ -5,23 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    @section('title')
+        {{ trans('dashboard.Dashboard') }}
+    @stop
     @include('layouts.head')
 </head>
-
 <body>
-
     <div class="wrapper">
-
         <!--preloader -->
-
         <div id="pre-loader">
             <img src="{{ asset('assets/images/pre-loader/rings.svg') }}" alt="">
         </div>
-
         @include('layouts.main-header')
-
         @include('layouts.main-sidebar')
-
         <!-- main-content -->
         <div class="content-wrapper">
             <div class="page-title">
@@ -50,8 +46,8 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">Total Accounts Created</p>
-                                    <h4>{{$res}}</h4>
+                                    <p class="card-text text-dark">{{ trans('dashboard.Total') }}</p>
+                                    <h4>{{ $res }}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -62,16 +58,11 @@
                     </div>
                 </div>
             </div>
-
-            
             @include('layouts.footer')
         </div>
     </div>
     </div>
     </div>
-
     @include('layouts.footer-scripts')
-
 </body>
-
 </html>

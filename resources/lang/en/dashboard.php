@@ -23,4 +23,6 @@ return [
 
     'Attendance'=>'Attendance',
     'Onlineclasses'=>'Online Classes',
+
+    'Total' => 'Total Accounts Created',
 ];
