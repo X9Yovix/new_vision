@@ -6,14 +6,14 @@ interface TeacherRepositoryInterface{
 
     public function getAllTeachers();
 
-    public function Getspecialization();
+    public function getSpecialization();
 
-    public function StoreTeachersFunction($request);
+    public function storeTeachersFunction($request);
 
     public function editTeachers($id);
 
-    public function UpdateTeachers($request);
+    public function updateTeachers($request);
 
-    public function DeleteTeachers($request);
+    public function deleteTeachers($request);
 
 }

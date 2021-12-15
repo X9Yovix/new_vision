@@ -15,12 +15,12 @@ class TeacherRepository implements TeacherRepositoryInterface
     return Teacher::all();
   }
 
-  public function Getspecialization()
+  public function getSpecialization()
   {
     return specialization::all();
   }
 
-  public function StoreTeachersFunction($request)
+  public function storeTeachersFunction($request)
   {
 
     try {
@@ -47,7 +47,7 @@ class TeacherRepository implements TeacherRepositoryInterface
   }
 
 
-  public function UpdateTeachers($request)
+  public function updateTeachers($request)
   {
     try {
       $Teachers = Teacher::findOrFail($request->id);
@@ -67,7 +67,7 @@ class TeacherRepository implements TeacherRepositoryInterface
   }
 
 
-  public function DeleteTeachers($request)
+  public function deleteTeachers($request)
   {
     Teacher::findOrFail($request->id)->delete();
     toastr()->error(trans('messages.Delete'));
